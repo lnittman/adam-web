@@ -8,7 +8,7 @@ import Badge from '@/components/Badge';
 
 export default function Bio() {
   return (
-    <DefaultLayout previewPixelSRC="https://intdev-global.s3.us-west-2.amazonaws.com/template-app-icon.png">
+    <DefaultLayout previewPixelSRC="/skate.png">
       {/* Header */}
       <div className={styles.row}>
         <div className={styles.column}>

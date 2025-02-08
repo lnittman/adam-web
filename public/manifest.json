@@ -1,0 +1,18 @@
+{
+  "name": "Adam Delaney",
+  "short_name": "AdamD",
+  "description": "iOS Developer Portfolio",
+  "theme_color": "#000000",
+  "background_color": "#000000",
+  "display": "standalone",
+  "scope": "/",
+  "start_url": "/",
+  "icons": [
+    {
+      "src": "/skate.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+} 

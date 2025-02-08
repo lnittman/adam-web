@@ -5,11 +5,13 @@ import { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Adam Delaney',
   description: 'Personal website of Adam Delaney',
+  manifest: '/manifest.json',
   icons: {
     icon: '/skate.png',
     shortcut: '/skate.png',
     apple: '/skate.png',
   },
+  themeColor: '#000000',
 };
 
 export default function RootLayout({
