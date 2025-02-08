@@ -2,8 +2,9 @@
   "name": "adam-web",
   "version": "0.1.0",
   "private": true,
+  "description": "Website for Adam Delaney", // Update description
   "scripts": {
-    "dev": "next dev --turbopack",
+    "dev": "next dev", // Removed --turbopack
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
@@ -13,6 +14,7 @@
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "sass": "^1.84.0"
+    // Add any missing dependencies from reference/package.json here
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
