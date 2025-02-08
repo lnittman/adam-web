@@ -2,7 +2,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 2ch 0;
+  padding: var(--space-md) 0;
   
   h1 {
     margin: 0;
@@ -12,31 +12,31 @@
 }
 
 .centerContent {
-  min-height: calc(100vh - 30ch);
+  min-height: calc(100vh - calc(var(--space-xl) * 5));
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   position: relative;
-  padding-bottom: 10ch;
+  padding-bottom: var(--space-xl);
 }
 
 .dock {
   position: fixed;
-  bottom: 2ch;
+  bottom: var(--space-md);
   left: 50%;
   transform: translateX(-50%);
-  padding: 1ch 2ch;
+  padding: var(--space-sm) var(--space-md);
   background: var(--theme-border-subdued);
-  border-radius: 1ch;
+  border-radius: var(--space-sm);
   display: flex;
-  gap: 2ch;
-  box-shadow: 0 0 2ch rgba(0, 0, 0, 0.1);
+  gap: var(--space-md);
+  box-shadow: 0 0 var(--space-md) rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(10px);
 
   :global(.dock-item) {
     transition: transform 0.2s ease;
-    font-size: 1.5em;
+    font-size: calc(var(--font-size) * 1.5);
 
     &:hover {
       transform: scale(1.2);
@@ -49,8 +49,8 @@
 }
 
 .column {
-  max-width: 768px;
-  padding: 0 24px;
+  max-width: min(90vw, 768px);
+  padding: 0 var(--space-md);
   margin: 0 auto;
   display: block;
   border-left: 1px solid var(--theme-border);

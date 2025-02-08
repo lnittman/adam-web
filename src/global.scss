@@ -11,8 +11,19 @@ $secondary-color: #0a0a0a;
 :root {
   --font-family-mono: 'IosevkaTerm-Regular', monospace;
   --base-font-size: 16px;
-  --font-size: clamp(0.875rem, 2vw, 1.125rem);
+  --font-size: clamp(14px, 2vw, 18px);
   --theme-line-height-base: 1.5;
+  --content-scale: clamp(0.8, 1vw, 1.2);
+  
+  // Base spacing unit that scales with viewport
+  --space-unit: clamp(0.5rem, 1vw, 1rem);
+  
+  // Derived spacing values
+  --space-xs: calc(var(--space-unit) * 0.5);
+  --space-sm: var(--space-unit);
+  --space-md: calc(var(--space-unit) * 2);
+  --space-lg: calc(var(--space-unit) * 3);
+  --space-xl: calc(var(--space-unit) * 4);
   
   @media (min-width: 768px) {
     --font-size: clamp(1rem, 1.5vw, 1.25rem);
@@ -57,6 +68,8 @@ body {
   line-height: var(--theme-line-height-base);
   color: var(--theme-text);
   background-color: var(--theme-background);
+  transform-origin: top left;
+  transform: scale(var(--content-scale));
 }
 
 a {
