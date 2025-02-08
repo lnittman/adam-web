@@ -38,9 +38,7 @@ export default function Home() {
       <div className={styles.row}>
         <div className={styles.column}>
           <div className={styles.centerContent}>
-            <BoubaKikiFrame type={shapeType}>
-              <AsciiText imageSrc="/skate.png" width={60} />
-            </BoubaKikiFrame>
+            <BoubaKikiFrame type={shapeType} />
             
             <div style={{ 
               display: 'flex', 
