@@ -1,4 +1,5 @@
-// Update these imports to point to your actual component and stylesheet locations
+"use client"
+
 import DefaultLayout from '@/components/page/DefaultLayout';
 import AsciiText from '@/components/examples/AsciiText';
 import styles from '@/components/page/root.module.scss';
@@ -6,6 +7,9 @@ import BlockLoader from '@/components/BlockLoader';
 import FooterNavigation from '@/components/FooterNavigation';
 import Text from '@/components/Text';
 import LogoWall from '@/components/LogoWall';
+import { useState } from 'react';
+import ButtonGroup from '@components/ButtonGroup';
+import BoubaKikiFrame from '@components/BoubaKikiFrame';
 
 const scrollingText = [
   { text: 'iOS DEVELOPER   ⌘ ' },
@@ -16,6 +20,8 @@ const scrollingText = [
 ];
 
 export default function Home() {
+  const [shapeType, setShapeType] = useState<'bouba' | 'kiki'>('bouba');
+
   return (
     <DefaultLayout previewPixelSRC="https://intdev-global.s3.us-west-2.amazonaws.com/template-app-icon.png">
       {/* Header */}
@@ -32,9 +38,33 @@ export default function Home() {
       <div className={styles.row}>
         <div className={styles.column}>
           <div className={styles.centerContent}>
-            <AsciiText imageSrc="/skate.png" width={60} />
+            <BoubaKikiFrame type={shapeType}>
+              <AsciiText imageSrc="/skate.png" width={60} />
+            </BoubaKikiFrame>
+            
+            <div style={{ 
+              display: 'flex', 
+              justifyContent: 'center',
+              marginTop: '1rem'
+            }}>
+              <ButtonGroup
+                items={[
+                  {
+                    body: '🌀 Bouba',
+                    onClick: () => setShapeType('bouba'),
+                    selected: shapeType === 'bouba'
+                  },
+                  {
+                    body: '🔺 Kiki',
+                    onClick: () => setShapeType('kiki'),
+                    selected: shapeType === 'kiki'
+                  }
+                ]}
+              />
+            </div>
           </div>
-          {/* Scrolling Text - Moved inside the column */}
+
+          {/* Scrolling Text */}
           <div className={styles.scrollingTextContainer}>
             <LogoWall
               items={scrollingText}

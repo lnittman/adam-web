@@ -16,6 +16,7 @@ interface ButtonGroupProps {
     hotkey?: string;
     openHotkey?: string;
     selected?: boolean;
+    onClick?: () => void;
   }[];
   isFull?: boolean;
 }
@@ -43,13 +44,13 @@ const ButtonGroup: React.FC<ButtonGroupProps> = ({ items, isFull }) => {
         return (
           <ActionButton 
             key={each.body} 
-            onClick={each.href ? () => {
+            onClick={each.onClick || (each.href ? () => {
               if (each.target === '_blank') {
                 window.open(each.href, '_blank');
               } else {
                 router.push(each.href);
               }
-            } : undefined}
+            } : undefined)}
             hotkey={each.hotkey} 
             isSelected={each.selected}
           >
