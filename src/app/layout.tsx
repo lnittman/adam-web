@@ -1,8 +1,18 @@
-import './globals.css';
-// Update this import to point to your actual Providers component location
-import Providers from '../components/Providers'; 
+import '@/global.scss';
+import Providers from '@/components/Providers';
+import { Metadata } from 'next';
 
-export default function layout({
+export const metadata: Metadata = {
+  title: 'Adam Delaney',
+  description: 'Personal website of Adam Delaney',
+  icons: {
+    icon: '/skate.png',
+    shortcut: '/skate.png',
+    apple: '/skate.png',
+  },
+};
+
+export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
@@ -10,9 +20,7 @@ export default function layout({
   return (
     <html lang="en">
       <body className="theme-light">
-        <Providers>
-          {children}
-        </Providers>
+        <Providers>{children}</Providers>
       </body>
     </html>
   );

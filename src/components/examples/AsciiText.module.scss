@@ -1,0 +1,81 @@
+.ascii {
+  font-family: var(--font-family-mono);
+  font-size: 1rem;
+  line-height: 0.8;
+  position: relative;
+  user-select: none;
+  color: var(--theme-text);
+  text-shadow: 0 0 5px var(--theme-text);
+
+  pre {
+    margin: 0;
+    position: relative;
+    display: inline-block;
+    white-space: pre;
+  }
+
+  &::before,
+  &::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.5;
+  }
+
+  &::before {
+    left: 2px;
+    text-shadow: -2px 0 #ff00c1;
+    animation: glitch-1 2s infinite linear alternate-reverse;
+  }
+
+  &::after {
+    left: -2px;
+    text-shadow: 2px 0 #00fff9;
+    animation: glitch-2 2s infinite linear alternate-reverse;
+  }
+}
+
+@keyframes glitch-1 {
+  0% {
+    clip-path: inset(20% 0 30% 0);
+  }
+  20% {
+    clip-path: inset(65% 0 1% 0);
+  }
+  40% {
+    clip-path: inset(43% 0 1% 0);
+  }
+  60% {
+    clip-path: inset(25% 0 58% 0);
+  }
+  80% {
+    clip-path: inset(75% 0 5% 0);
+  }
+  100% {
+    clip-path: inset(10% 0 85% 0);
+  }
+}
+
+@keyframes glitch-2 {
+  0% {
+    clip-path: inset(25% 0 58% 0);
+  }
+  20% {
+    clip-path: inset(75% 0 5% 0);
+  }
+  40% {
+    clip-path: inset(10% 0 85% 0);
+  }
+  60% {
+    clip-path: inset(20% 0 30% 0);
+  }
+  80% {
+    clip-path: inset(65% 0 1% 0);
+  }
+  100% {
+    clip-path: inset(43% 0 1% 0);
+  }
+} 
