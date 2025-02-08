@@ -8,11 +8,11 @@ import Text from '@/components/Text';
 import LogoWall from '@/components/LogoWall';
 
 const scrollingText = [
-  { text: 'iOS DEVELOPER / ' },
-  { text: 'LOS ANGELES / ' },
-  { text: 'AVAILABLE FOR CONTRACT WORK / ' },
-  { text: 'GET IN TOUCH :P / ' },
-  { text: '2025 /' },
+  { text: 'iOS DEVELOPER   ⌘ ' },
+  { text: 'LOS ANGELES   ⚡ ' },
+  { text: 'AVAILABLE FOR CONTRACT WORK   ⚔ ' },
+  { text: 'GET IN TOUCH   ☯ ' },
+  { text: '2025   ⚓ ' },
 ];
 
 export default function Home() {
